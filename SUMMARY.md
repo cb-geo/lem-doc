@@ -1,5 +1,5 @@
 # Summary
 
 * [LEM](README.md)
-* [Install on Darwin HPCS](install/hpc.md)
+* [Running on Darwin HPCS](install/hpc.md)
 

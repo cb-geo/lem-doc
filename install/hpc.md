@@ -68,4 +68,3 @@ cmake -DCMAKE_BUILD_TYPE=Release -DVOROPLUSPLUS_INCLUDE_DIR=/home/<userid>/scrat
 3. Run lem `export OMP_NUM_THREADS = N; ./lem -d /path/to/inputfile/` (where N is the number of cores)
 
 4. Run lemtest `ctest -VV -S` or `./lemtest` to run test cases.
-

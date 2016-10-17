@@ -81,14 +81,14 @@ This sections describes on getting the latest version of compilers and build cha
 
 4. Intel TBB for parallelisation support: `module load intel/cce/16.0.3.210`
 
-
+> **Note** All module load commands maybe included in `~/.bashrc` file so they are loaded at the start of each session.
 
 ## Compile and Run
 
 1. Compile `CMake` for custom external library paths
 
 ```bash
-mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
+mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DEIGEN3_HEADER_PATH=/scratch/<userid>/workspace/eigen/include/eigen3/ ..
 ```
 
 2. Run `make clean && make -jN` (where N is the number of cores)

@@ -50,13 +50,17 @@ prepend-path MANPATH $root/man
 9. To load voro++ `module load voro++`
 
 ### Eigen
-1. Create a folder in user `scratch` called `eigen`: `mkdir -p /scratch/<userid>/workspace/eigen/include/eigen3`
+1. Create a folder in user `scratch` called `eigen`: `mkdir -p /scratch/<userid>/workspace/eigen`
 
 2. In workspace `/scratch/<userid>/workspace` download the latest version of Eigen from the mercurial server: `hg clone https://bitbucket.org/eigen/eigen/ eigen3`
  
-3. From eigen3 folder copy Eigen to the workspace directory: `cp -R Eigen/ /scratch/<userid>/workspace/eigen/include/eigen3/`
+3. Change working directory to eigen `cd /scratch/<userid>/workspace/eigen/`
 
-4. Add a file `eigen` to the `/scratch/<userid>/modules/` with the following content (make sure to edit the root path:
+4. Run CMake from eigen pointing to the path where `CMakeLists.txt` file is present: `cmake -DCMAKE_INSTALL_PREFIX=/home/<userid>/scratch/workspace/eigen/ ../eigen3/`
+
+5. Once CMake is configured, run `make install`. This will install eigen locally.
+
+6. Add a file `eigen` to the `/scratch/<userid>/modules/` with the following content (make sure to edit the root path:
 
 ```tcl
 #%Module -*- tcl -*-
@@ -64,9 +68,9 @@ module-whatis "eigen"
 set root /scratch/<userid>/workspace/eigen
 prepend-path INCLUDE $root/include/eigen3
 ```
-5. To make the module available for use run `module use /scratch/<userid>/modules`
+7. To make the module available for use run `module use /scratch/<userid>/modules`
 
-6. To load eigen `module load eigen`
+8. To load eigen `module load eigen`
 
 
 ## Load modules on HPCS
@@ -88,7 +92,7 @@ This sections describes on getting the latest version of compilers and build cha
 1. Compile `CMake` for custom external library paths
 
 ```bash
-mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DEIGEN3_HEADER_PATH=/scratch/<userid>/workspace/eigen/include/eigen3/ ..
+mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
 
 2. Run `make clean && make -jN` (where N is the number of cores)

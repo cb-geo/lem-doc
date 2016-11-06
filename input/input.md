@@ -41,3 +41,6 @@ The mesh configuration defines id, input files, bounding box, element, node sets
     ]
   }
 ```
+
+## Boundary node sets
+Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.

@@ -85,7 +85,15 @@ This sections describes on getting the latest version of compilers and build cha
 
 4. Intel TBB for parallelisation support: `module load intel/cce/16.0.3.210`
 
+5. Intel MKL support (optional / recommended): `module load intel/cmkl/11.3.3.210`
+
+6. CUDA 8.0 support (optional / GPU hardware available): `module load cuda/8.0`
+
 > **Note** All module load commands maybe included in `~/.bashrc` file so they are loaded at the start of each session.
+
+```
+echo "module load cmake/3.4.3 intel/cce/16.0.3.210 intel/cmkl/11.3.3.210 eigen voro++ gcc/5.3.0 git/2.8.2" >> ~/.bashrc
+```
 
 ## Compile and Run
 
@@ -97,6 +105,6 @@ mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 
 2. Run `make clean && make -jN` (where N is the number of cores)
 
-3. Run lem `export OMP_NUM_THREADS = N; ./lem -d /path/to/inputfile/` (where N is the number of cores)
+3. Run lem `./lem -d /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d ../benchmarks/fracture_200/ -s CG_MKL`.
 
 4. Run lemtest `ctest -VV -S` or `./lemtest` to run test cases.

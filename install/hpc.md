@@ -105,6 +105,6 @@ mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 
 2. Run `make clean && make -jN` (where N is the number of cores)
 
-3. Run lem `./lem -d /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d ../benchmarks/fracture_200/ -s CG_MKL`.
+3. Run lem `./lem -d /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d ../benchmarks/fracture_200/ -s CG_MKL`. See [LEM solvers](../solvers/solvers.md) for more details.
 
 4. Run lemtest `ctest -VV -S` or `./lemtest` to run test cases.

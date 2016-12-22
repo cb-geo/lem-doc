@@ -4,6 +4,8 @@
 * [Voro++](http://math.lbl.gov/voro++/)
 * [Eigen](http://eigen.tuxfamily.org/)
 * [Intel Threaded Building Blocks (TBB)](https://www.threadingbuildingblocks.org/)
+* [Intel Math Kernel Library](https://software.intel.com/en-us/intel-mkl/) optional
+* [CUDA](https://www.nvidia.com/object/cuda_home_new.html) optional
 
 ### Compiler and build chain
 * CMake 3.1 or higher
@@ -108,3 +110,7 @@ mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 3. Run lem `./lem -d /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d ../benchmarks/fracture_200/ -s CG_MKL`. See [LEM solvers](../solvers/solvers.md) for more details.
 
 4. Run lemtest `ctest -VV -S` or `./lemtest` to run test cases.
+
+## Job submission
+### Darwin (CPU) cluster
+On Darwin HPCS, use the [lem submit file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem.txt)

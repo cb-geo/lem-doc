@@ -113,4 +113,4 @@ mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 
 ## Job submission
 ### Darwin (CPU) cluster
-On Darwin HPCS, use the [lem submit file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem.txt)
+On Darwin HPCS, use the [lem submit file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem.txt) [LEM GPU submission file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem-gpu.txt)

@@ -10,33 +10,37 @@ The mesh configuration defines id, input files, bounding box, element, node sets
     "id": 0,
     "input_files": {
       "nodes": "input/nodes.txt",
-      "elements": "input/elements.txt",
-      "fracture_elements": "input/fracture_elements.txt"
+      "
+      "elements": "input/elements.txt"
     },
     "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0],
     "element" : {
       "type" : "Beam",
-      "Emicro" : 2.0E+7,
       "alpha" : 1.0,
       "beta"  : 1.0,
       "tensile_strength" : 2000,
       "cohesion" : 2000,
-      "friction_angle" : 0.0
-    },
-    "node_sets" : {
-      "top" : "input/top_nodes.txt",
-      "bottom" : "input/bottom_nodes.txt"
+      "friction_angle" : 0.0,
+      "Emicro" : 2.0E+7,
+      "distribution" : {
+        "type" : "uniform", 
+        "sigma" : 0.05,
+        "mu" : 1.0, 
+        "min_threshold" : 0.2
+      }
     },
     "boundary_conditions" : [
       {
         "type" : "restrain",
-        "node_set" : "bottom",
+	"node_set" : "-z",
         "restrain" : [false, false, true, false, false, false] 
-      }, 
+      },
       {
-        "type" : "displacement",
-        "node_set" : "top",
-        "disp" : [0.0, 0.0, 0.00425, 0.0, 0.0, 0.0]
+        "type" : "pressure",
+	"node_set" : "+z",
+        "pressure" : 1700,
+        "dir" : 2,
+        "face" : 5
       }
     ]
   }

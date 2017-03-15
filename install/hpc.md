@@ -87,9 +87,11 @@ This sections describes on getting the latest version of compilers and build cha
 
 4. Intel TBB for parallelisation support: `module load intel/cce/16.0.3.210`
 
-5. Intel MKL support (optional / recommended): `module load intel/cmkl/11.3.3.210`
+5. Boost File System: `module load boost/1.62-python2.7.10-gcc5.2.0`
 
-6. CUDA 8.0 support (optional / GPU hardware available): `module load cuda/8.0`
+6. Intel MKL support (optional / recommended): `module load intel/cmkl/11.3.3.210`
+
+7. CUDA 8.0 support (optional / GPU hardware available): `module load cuda/8.0`
 
 > **Note** All module load commands maybe included in `~/.bashrc` file so they are loaded at the start of each session.
 

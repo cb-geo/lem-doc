@@ -1,9 +1,12 @@
 # Installation on HPC Darwin
 ## Prerequisites
 ### External libraries
+* [Boost](http://www.boost.org/)
 * [Voro++](http://math.lbl.gov/voro++/)
 * [Eigen](http://eigen.tuxfamily.org/)
 * [Intel Threaded Building Blocks (TBB)](https://www.threadingbuildingblocks.org/)
+* [VTK](http://www.vtk.org/)
+
 * [Intel Math Kernel Library](https://software.intel.com/en-us/intel-mkl/) optional
 * [CUDA](https://www.nvidia.com/object/cuda_home_new.html) optional
 
@@ -88,6 +91,8 @@ This sections describes on getting the latest version of compilers and build cha
 4. Intel TBB for parallelisation support: `module load intel/cce/16.0.3.210`
 
 5. Boost File System: `module load boost/1.62-python2.7.10-gcc5.2.0`
+
+6. VTK: `module load vtk/6.1.2`
 
 6. Intel MKL support (optional / recommended): `module load intel/cmkl/11.3.3.210`
 

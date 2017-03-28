@@ -9,7 +9,6 @@ The mesh configuration defines id, input files, bounding box, element, node sets
     "id": 0,
     "input_files": {
       "nodes": "input/nodes.txt",
-      "
       "elements": "input/elements.txt"
     },
     "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0],
@@ -22,7 +21,7 @@ The mesh configuration defines id, input files, bounding box, element, node sets
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
-        "type" : "uniform", 
+        "type" : "normal", 
         "sigma" : 0.05,
         "mu" : 1.0, 
         "min_threshold" : 0.2

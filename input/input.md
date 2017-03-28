@@ -1,5 +1,5 @@
-Preprocessing
-=============
+# Preprocessing
+===============
 
 Lattice Element Method (LEM) code use JSON file type for configuring the input.
 

@@ -25,6 +25,26 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6
 * Export SQLite to CSV `sqlite3 -header -csv ./stats.db "select * from Stats where analysis='b09b5957-4560-4c46-a3cc-c24f1552fefa';" > summary.csv`
 
 
+* To extract nodal displacements for a list of nodes, specify the nodes in the post-processing section of the JSON file:
+
+```json
+  "post_processing" : {
+    "output_steps" : 5,
+    "results_path" : "results/",
+    "nodes" : [0, 242]
+  }
+```
+
+* To query for nodal displacement (disp2) in `sqlite>`: `select timestep, disp2 from Nodes where analysis="b09b5957-4560-4c46-a3cc-c24f1552fefa" and nid=0;`, this will extract timestep and displacement2 (z) for node 0 and specified analysis.
+
+```
+timestep|disp2
+0|0.00354388962268145
+1|0.00374898244681804
+2|0.00374914990973956
+```
+
+
 
 
 

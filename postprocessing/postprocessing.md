@@ -1,7 +1,6 @@
 # Post processing
-=================
 
-* Lattice Element Method (LEM) exports forces, displacements, broken lattices as VTP files, which can be visualised using [ParaView](http://www.paraview.org/).
+* Lattice Element Method (LEM) exports forces, displacements, broken lattices as compressed binary VTP files, which can be visualised using [ParaView](http://www.paraview.org/) or [Visit](https://wci.llnl.gov/simulation/computer-codes/visit/).
 
 * A summary statistics for the test is experted at every step to a SQLite database. Each analysis has a unique id (uuid), type of analysis and a time stamp. To view the uuid of analysis: `sqlite3 ./stats.db "select * from Analyses";`. 
 

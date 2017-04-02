@@ -35,7 +35,7 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6
   }
 ```
 
-* To query for nodal displacement (disp2) in `sqlite>`: `select timestep, disp2 from Nodes where analysis="b09b5957-4560-4c46-a3cc-c24f1552fefa" and nid=0;`, this will extract timestep and displacement2 (z) for node 0 and specified analysis.
+* To query for nodal displacement (disp2) in `sqlite`, open the database using `sqlite3`: `sqlite3 ./stats.db`. In `sqlite3` run the following command in `sqlite>`: `select timestep, disp2 from Nodes where analysis="b09b5957-4560-4c46-a3cc-c24f1552fefa" and nid=0;`, this will extract timestep and displacement2 (z) for node 0 and specified analysis.
 
 ```
 timestep|disp2

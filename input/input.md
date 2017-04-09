@@ -16,6 +16,7 @@ The mesh configuration defines id, input files, bounding box, element, node sets
       "type" : "Beam",
       "alpha" : 1.0,
       "beta"  : 1.0,
+      "gamma" : 0.1,
       "tensile_strength" : 2000,
       "cohesion" : 2000,
       "friction_angle" : 0.0,
@@ -26,6 +27,10 @@ The mesh configuration defines id, input files, bounding box, element, node sets
         "mu" : 1.0, 
         "min_threshold" : 0.2
       }
+    },
+    "reconnection" : {
+      "status" : true,
+      "threshold": 1.0E-03
     },
     "boundary_conditions" : [
       {

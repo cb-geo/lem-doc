@@ -19,7 +19,11 @@ This sections describes on getting the latest version of compilers and build cha
 
 1. [Spack] has been installed on `/scratch/cb-geo` folder. Configure `spack`: `. /scratch/cb-geo/spack/share/spack/setup-env.sh`
 
-2. Load `lem` and preconfigured dependencies using `spack`: `spack load lem+mkl` (CPU) or `spack load lem+cuda` (GPU).
+2. Load `lem` and preconfigured dependencies using `spack`: `spack load lem/develop`.
+
+or 
+
+2. Load `lem` using `module av lem` and `module load lem/develop`
 
 ## Compile and Run
 

@@ -13,27 +13,38 @@
 * CMake 3.1 or higher
 * GCC 4.8 or higher (C++11 support)
 
-## Load modules on HPCS using Spack
+## Running LEM on HPCS (Wilkes GPU)
 
-This sections describes on getting the latest version of compilers and build chains installed on HPCS Darwin. See [HPCS instructions on modules](http://www.hpc.cam.ac.uk/using-clusters/quick-start#section-3) for further information.
+1. Run the following command to load required module files for LEM.
 
-1. [Spack] has been installed on `/scratch/cb-geo` folder. Configure `spack`: `. /scratch/cb-geo/spack/share/spack/setup-env.sh`
+```bash
+module use /scratch/cb-geo/modulefiles
+module add intel/mkl/11.3.3.210
+module add lem/wilkes
+```
 
-2. Load `lem` and preconfigured dependencies using `spack`: `spack load lem/develop`.
+2. The LEM package can be called directly by running `lem` 
 
-or 
+## Compile and Run LEM on Wilkes
 
-2. Load `lem` using `module av lem` and `module load lem/develop`
+1. Load the required modules:
 
-## Compile and Run
+```bash
+module use /scratch/cb-geo/modulefiles
+module add intel/mkl/11.3.3.210
+module add cuda/8.0
+module add vtk/wilkes
+module add eigen
+module add voro++
+```
 
-1. Compile `CMake` for custom external library paths
+2. Configure `CMake` and create a make file
 
 ```bash
 mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
 
-2. Run `make clean && make -jN` (where N is the number of cores)
+3. Run `make clean && make -jN` (where N is the number of cores)
 
 3. Run lem `./lem -d /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d ../benchmarks/fracture_200/ -s CG_MKL`. See [LEM solvers](../solvers/solvers.md) for more details.
 

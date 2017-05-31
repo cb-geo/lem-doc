@@ -19,6 +19,7 @@
 
 ```bash
 module use /scratch/cb-geo/modulefiles
+module load gcc/5.3.0
 module add intel/mkl/11.3.3.210
 module add lem/wilkes
 ```
@@ -31,6 +32,7 @@ module add lem/wilkes
 
 ```bash
 module use /scratch/cb-geo/modulefiles
+module load gcc/5.3.0
 module add intel/mkl/11.3.3.210
 module add cuda/8.0
 module add vtk/wilkes

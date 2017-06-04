@@ -1,4 +1,5 @@
 {
+  "plugins": ["mathjax"],
   "plugins": ["richquotes"],
   "plugins": ["anchorjs"]
 }

@@ -1,5 +1,3 @@
 {
-  "plugins": ["mathjax-commonhtml"],
-  "plugins": ["richquotes"],
-  "plugins": ["anchorjs"]
+  "plugins": ["anchorjs", "richquotes", "mathjax"]
 }

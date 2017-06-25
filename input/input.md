@@ -1,6 +1,14 @@
 # Preprocessing
 
-Lattice Element Method (LEM) code use JSON file type for configuring the input.
+Lattice Element Method (LEM) code use JSON file type for configuring the input. The flag `-i` is used to specify the input `JSON` file. 
+
+```shell
+   -i <input_file>,  --input_file <input_file>
+     Input JSON file [lem.json]
+
+   -d <Working_directory>,  --working_dir <Working_directory>
+     (required)  Current working directory
+```
 
 The mesh configuration defines id, input files, bounding box, element, node sets and boundary conditions:
 

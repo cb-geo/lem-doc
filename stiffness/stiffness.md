@@ -11,7 +11,7 @@
 
 ## Shear failure
 
-* When an element fails by shear, the initial shear stiffness $$k_s$$ is reduced to $$\gamma k_s$$, with a maximum shear strength of $$\gamma f_{ss}$$. 
+* When an element fails by shear, the initial shear stiffness $$k_s$$ is reduced to $$\gamma k_s$$, with a maximum shear strength of $$\gamma f_{ss}$$ as $$\gamma^'k_s$$. Thus, the tensile stiffness reduces by $$\gamma^'k_s / \alpha$$
 
 * When the element reaches the reduced shear capacity of $$\gamma f_{ss}$$, the stiffness is reduced based on the average shear displacement.
 

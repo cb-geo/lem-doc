@@ -13,6 +13,7 @@ Lattice Element Method (LEM) code use JSON file type for configuring the input. 
 The mesh configuration defines id, input files, bounding box, element, node sets and boundary conditions:
 
 ```json
+{
   "mesh": {
     "id": 0,
     "input_files": {
@@ -22,16 +23,16 @@ The mesh configuration defines id, input files, bounding box, element, node sets
     "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0],
     "element" : {
       "type" : "Beam",
-      "alpha" : 1.0,
+      "alpha" : 0.3,
       "beta"  : 1.0,
-      "gamma" : 0.1,
+      "gamma" : 0.3,
       "tensile_strength" : 2000,
-      "cohesion" : 2000,
+      "cohesion" : 4000,
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
-        "type" : "normal", 
-        "sigma" : 0.05,
+        "type" : "lognorm", 
+        "sigma" : 1.0,
         "mu" : 1.0, 
         "min_threshold" : 0.2
       }
@@ -43,18 +44,34 @@ The mesh configuration defines id, input files, bounding box, element, node sets
     "boundary_conditions" : [
       {
         "type" : "restrain",
-	"node_set" : "-z",
-        "restrain" : [false, false, true, false, false, false] 
-      },
-      {
-        "type" : "pressure",
-	"node_set" : "+z",
-        "pressure" : 1700,
-        "dir" : 2,
-        "face" : 5
+        "node_set" : "-z",
+        "restrain" : [true, true, true, false, false, false] 
       }
     ]
+  },
+  "analysis" : {
+    "type" : "displacement",
+    "loading" : {
+      "node_set" : "+z",
+      "disp" : [0.0, 0.0, 1.0E-04, 0.0, 0.0, 0.0],
+      "dir" : 2,
+      "face" : 5,
+      "strain_node_set" : ["+z", "-z"],
+      "max_steps" : 10000,
+      "nreassemble_stiffness": 10,
+      "max_threshold_lattices" : 100,
+      "max_breakable_lattices" : 25
+    }
+  },
+  "solver" : {
+    "max_iterations" : 2000,
+    "tolerance" : 1.0E-5
+  },
+  "post_processing" : {
+    "output_steps" : 100,
+    "results_path" : "results/"
   }
+}
 ```
 
 ## Boundary node sets

@@ -14,6 +14,7 @@ The mesh configuration defines id, input files, bounding box, element, node sets
 
 ```json
 {
+  "title": "Uniaxial stress controlled tension test 50x50x50 normal distribution",
   "mesh": {
     "id": 0,
     "input_files": {
@@ -23,55 +24,62 @@ The mesh configuration defines id, input files, bounding box, element, node sets
     "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0],
     "element" : {
       "type" : "Beam",
-      "alpha" : 0.3,
+      "alpha" : 1.0,
       "beta"  : 1.0,
-      "gamma" : 0.3,
+      "gamma" : 1.0,
       "tensile_strength" : 2000,
-      "cohesion" : 4000,
+      "cohesion" : 2000,
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
-        "type" : "lognorm", 
-        "sigma" : 1.0,
+        "type" : "uniform", 
+        "sigma" : 0.05,
         "mu" : 1.0, 
         "min_threshold" : 0.2
       }
     },
     "reconnection" : {
-      "status" : true,
-      "threshold": 1.0E-03
+      "status" : false
     },
     "boundary_conditions" : [
       {
         "type" : "restrain",
-        "node_set" : "-z",
-        "restrain" : [true, true, true, false, false, false] 
+	"node_set" : "-z",
+        "restrain" : [false, false, true, false, false, false] 
+      },
+      {
+        "type" : "pressure",
+	"node_set" : "+z",
+        "pressure" : 1700,
+        "dir" : 2,
+        "face" : 5
       }
     ]
   },
   "analysis" : {
-    "type" : "displacement",
+    "type" : "pressure",
     "loading" : {
       "node_set" : "+z",
-      "disp" : [0.0, 0.0, 1.0E-04, 0.0, 0.0, 0.0],
+      "pressure" : 1700,
       "dir" : 2,
       "face" : 5,
-      "strain_node_set" : ["+z", "-z"],
-      "max_steps" : 10000,
-      "nreassemble_stiffness": 10,
-      "max_threshold_lattices" : 100,
-      "max_breakable_lattices" : 25
+      "strain_node_set" : ["+z", "-z"],	
+      "max_steps" : 5,
+      "nreassemble_stiffness": 1,
+      "max_threshold_lattices" : 20,
+      "max_breakable_lattices" : 20
     }
   },
   "solver" : {
-    "max_iterations" : 2000,
-    "tolerance" : 1.0E-5
+    "max_iterations" : 10000,
+    "tolerance" : 2.5E-03
   },
   "post_processing" : {
     "output_steps" : 100,
     "results_path" : "results/"
   }
 }
+
 ```
 
 ## Boundary node sets

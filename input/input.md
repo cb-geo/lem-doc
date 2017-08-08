@@ -81,6 +81,12 @@ The mesh configuration defines id, input files, bounding box, element, node sets
 }
 
 ```
+## Bounding box
 
+The bounding box is an optional argument in the `mesh` element, which defines the minimum and maximum values of the box in three principal axes which encloses the LEM nodes. This is an optional argument, if not specified, the LEM code will compute the bounding box. 
+
+```json
+    "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0]
+```
 ## Boundary node sets
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.

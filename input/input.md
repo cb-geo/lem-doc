@@ -39,7 +39,8 @@ The mesh configuration defines id, input files, bounding box, element, node sets
       }
     },
     "reconnection" : {
-      "status" : false
+      "status" : true,
+      "threshold": 1.0E-05
     },
     "boundary_conditions" : [
       {

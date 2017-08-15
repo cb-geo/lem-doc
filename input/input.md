@@ -82,7 +82,13 @@ The mesh configuration defines id, input files, bounding box, element, node sets
 }
 
 ```
-## Bounding box
+## Title [optional]
+```json
+  "title": "Uniaxial stress controlled tension test 50x50x50 normal distribution",
+```
+Descriptive name of the analysis. This is an optional argument, but is recommended to provide a meaningful title to the analysis.
+
+## Bounding box [optional]
 
 The bounding box is an optional argument in the `mesh` element, which defines the minimum and maximum values of the box in three principal axes which encloses the LEM nodes. This is an optional argument, if not specified, the LEM code will compute the bounding box. 
 

@@ -62,6 +62,14 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6
 
 ## Lattice table
 
+* To enable writing lattice information enable `lattices` in `post_processing` section of the input JSON file:
+
+```json
+  "post_processing" : {
+    "lattices" : true
+  }
+```
+
 * Stiffness and status of lattices are written to a table called `Lattices`:
 
 ```

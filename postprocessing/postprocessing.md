@@ -2,7 +2,7 @@
 
 * Lattice Element Method (LEM) exports forces, displacements, broken lattices as compressed binary VTP files, which can be visualised using [ParaView](http://www.paraview.org/) or [Visit](https://wci.llnl.gov/simulation/computer-codes/visit/).
 
-* A summary statistics for the test is experted at every step to a SQLite database. Each analysis has a unique id (uuid), type of analysis and a time stamp. To view the uuid of analysis: `sqlite3 ./stats.db "select * from Analyses";`. 
+* A summary statistics for the test is exported at every step to a SQLite database. Each analysis has a unique id (uuid), type of analysis and a time stamp. To view the uuid of analysis: `sqlite3 ./stats.db "select * from Analyses";`. 
 
 ```
 id|type|timestamp
@@ -57,6 +57,26 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|3|1870.62270044566|9.31027055645156e-05|5|5
 b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6|0|1.56735984822119|0.00379986001471253
 ```
 
+## Lattice table
+
+* Stiffness and status of lattices are written to a table called `Lattices`:
+
+```
+analysis|timestep|eid|stiffness|status
+b09b5957-4560-4c46-a3cc-c24f1552fefa|0|0|16587793.8489298|1
+b09b5957-4560-4c46-a3cc-c24f1552fefa|0|1|8789304.42281428|1
+b09b5957-4560-4c46-a3cc-c24f1552fefa|0|2|1397908.18070347|1
+b09b5957-4560-4c46-a3cc-c24f1552fefa|0|3|11197073.256249|1
+
+```
+
+* To extract stiffness data of a particular time step `n`:
+ 
+```
+ select * from Lattices where analysis='b09b5957-4560-4c46-a3cc-c24f1552fefa' and timestep=0;
+```
+
+> **Info** A status of 1 indicates active, and 0 otherwise.s
 
 
 

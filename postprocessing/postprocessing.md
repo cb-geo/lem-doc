@@ -24,6 +24,9 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6
 
 * Export SQLite to CSV `sqlite3 -header -csv ./stats.db "select * from Stats where analysis='b09b5957-4560-4c46-a3cc-c24f1552fefa';" > summary.csv`
 
+## Node table
+
+* Information of selected nodal quantities are written to `Nodes` table.
 
 * To extract nodal displacements for a list of nodes, specify the nodes in the post-processing section of the JSON file:
 

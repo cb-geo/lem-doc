@@ -10,7 +10,7 @@ Lattice Element Method (LEM) code use JSON file type for configuring the input. 
      (required)  Current working directory
 ```
 
-The mesh configuration defines id, input files, bounding box, element, node sets and boundary conditions:
+The LEM configuration defines id, input files, bounding box, element, node sets and boundary conditions:
 
 ```json
 {
@@ -97,3 +97,6 @@ The bounding box is an optional argument in the `mesh` element, which defines th
 ```
 ## Boundary node sets
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.
+
+# Sample input files
+* [https://github.com/cb-geo/lem-benchmarks](https://github.com/cb-geo/lem-benchmarks)

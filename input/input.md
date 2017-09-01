@@ -153,7 +153,15 @@ The type is an argument in the `mesh` element, which defines the lattice element
 
 ## Alpha
 
-The parameter alpha is the ratio of stiffness between axial spring and shear spring
+The parameter alpha is the ratio of stiffness between axial spring and shear spring.
+
+## Beta
+
+The parameter beta is a scalar introduced to modify the contribution of rotation stiffness.
+
+## Gamma
+
+The  coefficient gamma is used to  reduce the normal and shear stiffness in tensile failure and shear failure.
 
 ## Boundary node sets
 

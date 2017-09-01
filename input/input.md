@@ -94,11 +94,25 @@ Descriptive name of the analysis. This is an optional argument, but is recommend
 
 The input files is an argument in the `mesh` element,  which contains the directory of the input files with the nodes and elements information.
 
+```json
+    "input_files": {
+      "nodes": "input/nodes.txt",
+      "elements": "input/elements.txt"
+```
+
 ## Nodes
+
+```json
+      "nodes": "input/nodes.txt",
+```
 
 The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
 
 ## Elements \[optional\]
+
+```json
+      "elements": "input/elements.txt"
+```
 
 The Elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
 

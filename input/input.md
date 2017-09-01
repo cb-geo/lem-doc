@@ -102,7 +102,7 @@ The input files is an argument in the `mesh` element,  which contains the direct
 
 ## Nodes
 
-The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
+The nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
 
 ```json
       "nodes": "input/nodes.txt",
@@ -110,7 +110,7 @@ The Nodes is an argument in the `mesh` element,  which contains the directory of
 
 ## Elements \[optional\]
 
-The Elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
+The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
 
 ```json
       "elements": "input/elements.txt"
@@ -126,7 +126,7 @@ The bounding box is an optional argument in the `mesh` element, which defines th
 
 ## Element
 
-The Element is an argument in the `mesh` element, which defines the material properties information. 
+The element is an argument in the `mesh` element, which defines the material properties information.
 
 ```json
     "element" : {
@@ -146,6 +146,10 @@ The Element is an argument in the `mesh` element, which defines the material pro
       }
     },
 ```
+
+## Type 
+
+The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
 
 ## Boundary node sets
 

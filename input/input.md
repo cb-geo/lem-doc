@@ -124,6 +124,29 @@ The bounding box is an optional argument in the `mesh` element, which defines th
     "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0]
 ```
 
+## Element
+
+The Element is an argument in the `mesh` element, which defines the material properties information. 
+
+```json
+    "element" : {
+      "type" : "Beam",
+      "alpha" : 1.0,
+      "beta"  : 1.0,
+      "gamma" : 1.0,
+      "tensile_strength" : 2000,
+      "cohesion" : 2000,
+      "friction_angle" : 0.0,
+      "Emicro" : 2.0E+7,
+      "distribution" : {
+        "type" : "uniform", 
+        "sigma" : 0.05,
+        "mu" : 1.0, 
+        "min_threshold" : 0.2
+      }
+    },
+```
+
 ## Boundary node sets
 
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.

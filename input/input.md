@@ -92,6 +92,12 @@ Descriptive name of the analysis. This is an optional argument, but is recommend
 
 ## Input Files
 
+The input files is an argument in the `mesh` element,  which contains the directory of the input files with the nodes and elements information. 
+
+## Nodes 
+
+The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates. 
+
 
 
 ## Bounding box \[optional\]

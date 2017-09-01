@@ -110,11 +110,11 @@ The Nodes is an argument in the `mesh` element,  which contains the directory of
 
 ## Elements \[optional\]
 
+The Elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
+
 ```json
       "elements": "input/elements.txt"
 ```
-
-The Elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
 
 ## Bounding box \[optional\]
 

@@ -170,11 +170,13 @@ The tensile strength is the maximum stress that the lattice element can withstan
 
 ## Cohesion
 
-Is the material cohesion that is used in the conventional Mohr-Columnb failure citeria.
+Is the material cohesion that is used in the conventional Mohr-  
+Columnb failure citeria.
 
 ## Friction angle
 
-Is the friction angle of the material that is used in the conventional Mohr-Columnb failure citeria. 
+Is the friction angle of the material that is used in the conventional Mohr-  
+Columnb failure citeria.
 
 ## Emicro
 
@@ -182,7 +184,7 @@ The Emicro is the Micropolar elasticity module of the lattice element material.
 
 ## Distribution
 
-The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function.
+The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function.
 
 ## Boundary node sets
 

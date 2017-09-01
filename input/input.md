@@ -151,7 +151,9 @@ The element is an argument in the `mesh` element, which defines the material pro
 
 The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
 
+## Alpha
 
+The parameter alpha is the ratio of stiffness between axial spring and shear spring
 
 ## Boundary node sets
 

@@ -147,9 +147,11 @@ The element is an argument in the `mesh` element, which defines the material pro
     },
 ```
 
-## Type 
+## Type
 
 The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
+
+
 
 ## Boundary node sets
 

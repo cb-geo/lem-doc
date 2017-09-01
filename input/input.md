@@ -92,6 +92,8 @@ Descriptive name of the analysis. This is an optional argument, but is recommend
 
 ## Input Files
 
+
+
 ## Bounding box \[optional\]
 
 The bounding box is an optional argument in the `mesh` element, which defines the minimum and maximum values of the box in three principal axes which encloses the LEM nodes. This is an optional argument, if not specified, the LEM code will compute the bounding box.

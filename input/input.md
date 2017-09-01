@@ -151,40 +151,77 @@ The element is an argument in the `mesh` element, which defines the material pro
 
 The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
 
+```json
+      "type" : "Beam",
+```
+
 ## Alpha
 
 The parameter alpha is the ratio of stiffness between axial spring and shear spring.
 
+```json
+      "alpha" : 1.0,
+```
+
 ## Beta
 
-The parameter beta is a scalar introduced to modify the  
- contribution of rotation stiffness.
+The parameter beta is a scalar introduced to modify the contribution of rotation stiffness.
+
+```json
+      "beta"  : 1.0,
+```
 
 ## Gamma
 
 The  coefficient gamma is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
 
+```json
+      "gamma" : 1.0,
+```
 ## Tensile strength
 
 The tensile strength is the maximum stress that the lattice element can withstand while being stretched or pulled before breaking.
 
+```json
+      "tensile_strength" : 2000,
+```
+
 ## Cohesion
 
-Is the material cohesion that is used in the conventional Mohr-  
-Columnb failure citeria.
+Is the material cohesion that is used in the conventional Mohr-Columnb failure citeria.
+
+```json
+      "cohesion" : 2000,
+```
 
 ## Friction angle
 
-Is the friction angle of the material that is used in the conventional Mohr-  
-Columnb failure citeria.
+Is the friction angle of the material that is used in the conventional Mohr-Columnb failure citeria.
+
+```json
+      "friction_angle" : 0.0,
+```
 
 ## Emicro
 
 The Emicro is the Micropolar elasticity module of the lattice element material.
 
+```json
+      "Emicro" : 2.0E+7,
+```
+
 ## Distribution
 
 The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function.
+
+```json
+      "distribution" : {
+        "type" : "uniform", 
+        "sigma" : 0.05,
+        "mu" : 1.0, 
+        "min_threshold" : 0.2
+      }
+```
 
 ## Boundary node sets
 

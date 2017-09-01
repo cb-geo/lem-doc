@@ -102,11 +102,11 @@ The input files is an argument in the `mesh` element,  which contains the direct
 
 ## Nodes
 
+The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
+
 ```json
       "nodes": "input/nodes.txt",
 ```
-
-The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
 
 ## Elements \[optional\]
 

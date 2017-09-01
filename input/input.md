@@ -147,25 +147,9 @@ The element is an argument in the `mesh` element, which defines the material pro
     },
 ```
 
-## Type
+## Type 
 
-Defines the lattice element type \(Beam or Spring\).
-
-## Alpha
-
-The parameter alpha is the ratio of stiffness between axial lattice element and shear lattice element.
-
-## Beta
-
-The parameter beta is a scalar introduced to modify the contribution of rotation stiffness.
-
-## Gamma
-
-The parameter gamma  is a coefficient to reduce normal and shear stiffness in a tensile failure or shear failure. More information in found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
-
-## Tensile strength
-
-
+The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
 
 ## Boundary node sets
 

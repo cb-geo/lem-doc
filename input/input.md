@@ -92,13 +92,15 @@ Descriptive name of the analysis. This is an optional argument, but is recommend
 
 ## Input Files
 
-The input files is an argument in the `mesh` element,  which contains the directory of the input files with the nodes and elements information. 
+The input files is an argument in the `mesh` element,  which contains the directory of the input files with the nodes and elements information.
 
-## Nodes 
+## Nodes
 
-The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates. 
+The Nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
 
+## Elements \[optional\]
 
+The Elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
 
 ## Bounding box \[optional\]
 

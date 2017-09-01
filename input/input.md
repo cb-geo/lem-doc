@@ -157,11 +157,32 @@ The parameter alpha is the ratio of stiffness between axial spring and shear spr
 
 ## Beta
 
-The parameter beta is a scalar introduced to modify the contribution of rotation stiffness.
+The parameter beta is a scalar introduced to modify the  
+ contribution of rotation stiffness.
 
 ## Gamma
 
-The  coefficient gamma is used to  reduce the normal and shear stiffness in tensile failure and shear failure.
+The  coefficient gamma is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
+
+## Tensile strength
+
+The tensile strength is the maximum stress that the lattice element can withstand while being stretched or pulled before breaking.
+
+## Cohesion
+
+Is the material cohesion that is used in the conventional Mohr-Columnb failure citeria.
+
+## Friction angle
+
+Is the friction angle of the material that is used in the conventional Mohr-Columnb failure citeria. 
+
+## Emicro
+
+The Emicro is the Micropolar elasticity module of the lattice element material.
+
+## Distribution
+
+The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function.
 
 ## Boundary node sets
 

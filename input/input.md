@@ -1,6 +1,6 @@
 # Preprocessing
 
-Lattice Element Method (LEM) code use JSON file type for configuring the input. The flag `-i` is used to specify the input `JSON` file. 
+Lattice Element Method \(LEM\) code use JSON file type for configuring the input. The flag `-i` is used to specify the input `JSON` file.
 
 ```shell
    -i <input_file>,  --input_file <input_file>
@@ -45,12 +45,12 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
     "boundary_conditions" : [
       {
         "type" : "restrain",
-	"node_set" : "-z",
+    "node_set" : "-z",
         "restrain" : [false, false, true, false, false, false] 
       },
       {
         "type" : "pressure",
-	"node_set" : "+z",
+    "node_set" : "+z",
         "pressure" : 1700,
         "dir" : 2,
         "face" : 5
@@ -64,7 +64,7 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
       "pressure" : 1700,
       "dir" : 2,
       "face" : 5,
-      "strain_node_set" : ["+z", "-z"],	
+      "strain_node_set" : ["+z", "-z"],    
       "max_steps" : 5,
       "nreassemble_stiffness": 1,
       "max_threshold_lattices" : 20,
@@ -80,23 +80,66 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
     "results_path" : "results/"
   }
 }
-
 ```
-## Title [optional]
+
+## Title \[optional\]
+
 ```json
   "title": "Uniaxial stress controlled tension test 50x50x50 normal distribution",
 ```
+
 Descriptive name of the analysis. This is an optional argument, but is recommended to provide a meaningful title to the analysis.
 
-## Bounding box [optional]
+## Input Files 
 
-The bounding box is an optional argument in the `mesh` element, which defines the minimum and maximum values of the box in three principal axes which encloses the LEM nodes. This is an optional argument, if not specified, the LEM code will compute the bounding box. 
+The Input files is an argument in the `mesh` element, which contains the directory of the input files with nodes and elements information.
 
 ```json
-    "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0]
+  "input_files":{
+      "nodes": "input/nodes.txt",
+      "elements": "input/elements.txt"
+    }, 
 ```
+
+## Nodes
+
+The nodes is an argument in the `mesh` element, which contains the directory of the input file with the nodes coordinates.
+
+```json
+        "nodes": "input/nodes.txt"
+```
+
+## Elements \[optional\]
+
+The elements is an optional argument in the `mesh` element, which contains the directory of the input file with the nodal incidence of the elements. This is an optional argument, if not specified, the LEM code will create the  input file with the element information.
+
+```json
+        "elements": "input/elements.txt"
+```
+
+## Bounding box \[optional\]
+
+The bounding box is an optional argument in the `mesh` element, which defines the minimum and maximum values of the box in three principal axes which encloses the LEM nodes. This is an optional argument, if not specified, the LEM code will compute the bounding box.
+
+```json
+    "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0]     
+```
+
+## Element
+
+The Element is an argument in the `mesh` element, which defines the material properties of the element.
+
+```json
+"element"
+```
+
 ## Boundary node sets
+
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.
 
 # Sample input files
+
 * [https://github.com/cb-geo/lem-benchmarks](https://github.com/cb-geo/lem-benchmarks)
+
+
+

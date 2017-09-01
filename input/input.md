@@ -153,7 +153,7 @@ The type is an argument in the `mesh` element, which defines the lattice element
 
 ## Alpha
 
-The parameter alpha is the ratio of stiffness between axial spring and shear spring
+The parameter alpha is the ratio of stiffness between axial spring and shear spring
 
 ## Boundary node sets
 

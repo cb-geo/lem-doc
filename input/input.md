@@ -178,6 +178,7 @@ The  coefficient gamma is used to  reduce the normal and shear stiffness in tens
 ```json
       "gamma" : 1.0,
 ```
+
 ## Tensile strength
 
 The tensile strength is the maximum stress that the lattice element can withstand while being stretched or pulled before breaking.
@@ -212,16 +213,18 @@ The Emicro is the Micropolar elasticity module of the lattice element material.
 
 ## Distribution
 
-The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function.
+The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function. LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are "sigma", "mu" and "min\_threshold", where "sigma" is the standard deviation, "mu" is the mean or expectation of the distribution and "min\_threshold" is the minimum allowable probability value.
 
 ```json
       "distribution" : {
-        "type" : "uniform", 
+        "type" : "normal", 
         "sigma" : 0.05,
         "mu" : 1.0, 
         "min_threshold" : 0.2
       }
 ```
+
+## Sigma
 
 ## Boundary node sets
 

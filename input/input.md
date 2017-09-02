@@ -110,7 +110,7 @@ The nodes is an argument in the `mesh` element,  which contains the directory of
 
 ## Elements \[optional\]
 
-The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with tnodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
+The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with the nodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
 
 ```json
       "elements": "input/elements.txt"
@@ -213,7 +213,7 @@ The `Emicro` is the Micropolar elasticity module of the lattice element.
 
 ## Distribution
 
-The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function. LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min\_threshold` is the minimum allowable probability value.
+LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min\_threshold` is the minimum allowable probability value.
 
 ```json
       "distribution" : {

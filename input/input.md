@@ -262,7 +262,7 @@ Cartesian boundary node sets are automatically created based on the list of node
 
 # Analysis
 
-The analysis argument define what load type is applied as "displacement" or "pressure", maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
+The analysis argument define what load type is applied as `displacement` or `pressure`, maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
 
 ```json
   "analysis" : {

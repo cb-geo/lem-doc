@@ -205,7 +205,7 @@ Is the friction angle of the material that is used in the conventional Mohr-Colu
 
 ## Emicro
 
-The Emicro is the Micropolar elasticity module of the lattice element material.
+The `Emicro` is the Micropolar elasticity module of the lattice element material.
 
 ```json
       "Emicro" : 2.0E+7,

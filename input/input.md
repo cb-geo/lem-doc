@@ -213,7 +213,7 @@ The `Emicro` is the Micropolar elasticity module of the lattice element.
 
 ## Distribution
 
-The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function. LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are "sigma", "mu" and "min\_threshold", where "sigma" is the standard deviation, "mu" is the mean or expectation of the distribution and "min\_threshold" is the minimum allowable probability value.
+The magnitude of the fluctuations in rock properties is quantified by the marginal probability distribution functions. In other words, it assigns random stiffness and strength values according to a user-specified probability distribution function. LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min\_threshold` is the minimum allowable probability value.
 
 ```json
       "distribution" : {
@@ -237,7 +237,7 @@ The re-connection is an argument in the `mesh` element, `status: yes` adds an in
 
 ## Boundary conditions
 
-Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for restrain boundary or pressure to apply initial load.
+Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for `restrain` boundary or `pressure` to apply initial load.
 
 ```json
     "boundary_conditions" : [

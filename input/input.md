@@ -157,7 +157,7 @@ The type is an argument in the `mesh` element, which defines the lattice element
 
 ## Alpha
 
-The parameter alpha is the ratio of stiffness between axial spring and shear spring.
+The parameter `alpha` is the ratio of stiffness between axial spring and shear spring.
 
 ```json
       "alpha" : 1.0,
@@ -165,7 +165,7 @@ The parameter alpha is the ratio of stiffness between axial spring and shear spr
 
 ## Beta
 
-The parameter beta is a scalar introduced to modify the contribution of rotation stiffness.
+The parameter `beta` is a scalar introduced to modify the contribution of rotation stiffness.
 
 ```json
       "beta"  : 1.0,
@@ -173,7 +173,7 @@ The parameter beta is a scalar introduced to modify the contribution of rotation
 
 ## Gamma
 
-The  coefficient gamma is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
+The  coefficient `gamma` is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
 
 ```json
       "gamma" : 1.0,
@@ -226,7 +226,7 @@ The magnitude of the fluctuations in rock properties is quantified by the margin
 
 ## Reconnection
 
-The re-connection is an argument in the `mesh` element, "status": yes adds an increase in stiffness from 0 stiffness, when  an element gets reconnected.
+The re-connection is an argument in the `mesh` element, `status: yes` adds an increase in stiffness from `0` stiffness, when  an element gets reconnected.
 
 ```json
     "reconnection" : {

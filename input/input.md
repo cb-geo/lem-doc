@@ -224,11 +224,21 @@ The magnitude of the fluctuations in rock properties is quantified by the margin
       }
 ```
 
-## Sigma
+## Reconnection
+
+The re-connection is an argument in the `mesh` element, "status": yes adds an increase in stiffness from 0 stiffness, when  an element gets reconnected.
+
+## Boundary conditions
+
+Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for restrain boundary or pressure to apply initial load. 
 
 ## Boundary node sets
 
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.
+
+# Analysis 
+
+The analysis argument define what load type is applied as "displacement" or "pressure", maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
 
 # Sample input files
 

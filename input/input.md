@@ -205,7 +205,7 @@ Is the friction angle of the material that is used in the conventional Mohr-Colu
 
 ## Emicro
 
-The `Emicro` is the Micropolar elasticity module of the lattice element material.
+The `Emicro` is the Micropolar elasticity module of the lattice element.
 
 ```json
       "Emicro" : 2.0E+7,
@@ -226,7 +226,7 @@ The magnitude of the fluctuations in rock properties is quantified by the margin
 
 ## Reconnection
 
-The re-connection is an argument in the `mesh` element, `status: yes` adds an increase in stiffness from `0` stiffness, when  an element gets reconnected.
+The re-connection is an argument in the `mesh` element, `status: yes` adds an increase in stiffness from `0` stiffness, when  an element gets reconnected.
 
 ```json
     "reconnection" : {
@@ -237,7 +237,7 @@ The re-connection is an argument in the `mesh` element, `status: yes` adds an in
 
 ## Boundary conditions
 
-Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for restrain boundary or pressure to apply initial load. 
+Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for restrain boundary or pressure to apply initial load.
 
 ```json
     "boundary_conditions" : [
@@ -254,13 +254,13 @@ Boundary conditions are used to prescribe values of basic solution variables: di
         "face" : 5
       }
     ]
-```	
-	
+```
+
 ## Boundary node sets
 
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.
 
-# Analysis 
+# Analysis
 
 The analysis argument define what load type is applied as "displacement" or "pressure", maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
 
@@ -279,7 +279,7 @@ The analysis argument define what load type is applied as "displacement" or "pre
       "max_breakable_lattices" : 20
     }
   },
-```	
+```
 
 # Sample input files
 

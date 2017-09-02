@@ -228,10 +228,34 @@ The magnitude of the fluctuations in rock properties is quantified by the margin
 
 The re-connection is an argument in the `mesh` element, "status": yes adds an increase in stiffness from 0 stiffness, when  an element gets reconnected.
 
+```json
+    "reconnection" : {
+      "status" : true,
+      "threshold": 1.0E-05
+    },
+```
+
 ## Boundary conditions
 
 Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for restrain boundary or pressure to apply initial load. 
 
+```json
+    "boundary_conditions" : [
+      {
+        "type" : "restrain",
+    "node_set" : "-z",
+        "restrain" : [false, false, true, false, false, false] 
+      },
+      {
+        "type" : "pressure",
+    "node_set" : "+z",
+        "pressure" : 1700,
+        "dir" : 2,
+        "face" : 5
+      }
+    ]
+```	
+	
 ## Boundary node sets
 
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.
@@ -239,6 +263,23 @@ Cartesian boundary node sets are automatically created based on the list of node
 # Analysis 
 
 The analysis argument define what load type is applied as "displacement" or "pressure", maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
+
+```json
+  "analysis" : {
+    "type" : "pressure",
+    "loading" : {
+      "node_set" : "+z",
+      "pressure" : 1700,
+      "dir" : 2,
+      "face" : 5,
+      "strain_node_set" : ["+z", "-z"],    
+      "max_steps" : 5,
+      "nreassemble_stiffness": 1,
+      "max_threshold_lattices" : 20,
+      "max_breakable_lattices" : 20
+    }
+  },
+```	
 
 # Sample input files
 

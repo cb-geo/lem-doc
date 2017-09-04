@@ -32,9 +32,9 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
-        "type" : "uniform", 
+        "type" : "uniform",
         "sigma" : 0.05,
-        "mu" : 1.0, 
+        "mu" : 1.0,
         "min_threshold" : 0.2
       }
     },
@@ -46,7 +46,7 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
       {
         "type" : "restrain",
     "node_set" : "-z",
-        "restrain" : [false, false, true, false, false, false] 
+        "restrain" : [false, false, true, false, false, false]
       },
       {
         "type" : "pressure",
@@ -97,7 +97,8 @@ The input files is an argument in the `mesh` element,  which contains the direct
 ```json
     "input_files": {
       "nodes": "input/nodes.txt",
-      "elements": "input/elements.txt"
+      "elements": "input/elements.txt",
+      },
 ```
 
 ## Nodes
@@ -139,9 +140,9 @@ The element is an argument in the `mesh` element, which defines the material pro
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
-        "type" : "uniform", 
+        "type" : "uniform",
         "sigma" : 0.05,
-        "mu" : 1.0, 
+        "mu" : 1.0,
         "min_threshold" : 0.2
       }
     },
@@ -217,9 +218,9 @@ LEM code includes the option to choose from three probability distribution funct
 
 ```json
       "distribution" : {
-        "type" : "normal", 
+        "type" : "normal",
         "sigma" : 0.05,
-        "mu" : 1.0, 
+        "mu" : 1.0,
         "min_threshold" : 0.2
       }
 ```
@@ -244,7 +245,7 @@ Boundary conditions are used to prescribe values of basic solution variables: di
       {
         "type" : "restrain",
     "node_set" : "-z",
-        "restrain" : [false, false, true, false, false, false] 
+        "restrain" : [false, false, true, false, false, false]
       },
       {
         "type" : "pressure",
@@ -284,6 +285,3 @@ The analysis argument define what load type is applied as `displacement` or `pre
 # Sample input files
 
 * [https://github.com/cb-geo/lem-benchmarks](https://github.com/cb-geo/lem-benchmarks)
-
-
-

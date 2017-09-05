@@ -69,12 +69,12 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
     "boundary_conditions" : [
       {
         "type" : "restrain",
-    "node_set" : "-z",
+        "node_set" : "-z",
         "restrain" : [false, false, true, false, false, false]
       },
       {
         "type" : "pressure",
-    "node_set" : "+z",
+        "node_set" : "+z",
         "pressure" : 1700,
         "dir" : 2,
         "face" : 5
@@ -114,7 +114,14 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
 
 Descriptive name of the analysis. This is an optional argument, but is recommended to provide a meaningful title to the analysis.
 
-## Input Files
+## Mesh
+
+The `mesh` object specifies the global mesh parameters.
+
+### ID
+The object `id` denotes the `mesh` id, in case multiple meshes are used.
+
+### Input Files
 
 The input files is an argument in the `mesh` element,  which contains the directory of the input files with the nodes and elements information.
 
@@ -125,7 +132,7 @@ The input files is an argument in the `mesh` element,  which contains the direct
     }
 ```
 
-## Nodes
+#### Nodes
 
 The nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
 
@@ -133,7 +140,7 @@ The nodes is an argument in the `mesh` element,  which contains the directory of
       "nodes": "input/nodes.txt"
 ```
 
-## Elements \[optional\]
+#### Elements \[optional\]
 
 The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with the nodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
 
@@ -141,7 +148,7 @@ The elements is an optional argument in the `mesh` element,  which contains the 
       "elements": "input/elements.txt"
 ```
 
-## Bounding box \[optional\]
+### Bounding box \[optional\]
 
 The bounding box is an optional argument in the `mesh` element, which defines the minimum and maximum values of the box in three principal axes which encloses the LEM nodes. This is an optional argument, if not specified, the LEM code will compute the bounding box.
 
@@ -149,7 +156,7 @@ The bounding box is an optional argument in the `mesh` element, which defines th
     "bounding_box" : [0.0, 50.0, 0.0, 50.0, 0.0, 50.0]
 ```
 
-## Element
+### Element
 
 The element is an argument in the `mesh` element, which defines the material properties information.
 
@@ -172,7 +179,7 @@ The element is an argument in the `mesh` element, which defines the material pro
     }
 ```
 
-### Type
+#### Type
 
 The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
 
@@ -180,7 +187,7 @@ The type is an argument in the `mesh` element, which defines the lattice element
       "type" : "Beam"
 ```
 
-### Alpha
+#### Alpha
 
 The parameter `alpha` is the ratio of stiffness between axial spring and shear spring.
 
@@ -188,7 +195,7 @@ The parameter `alpha` is the ratio of stiffness between axial spring and shear s
       "alpha" : 1.0
 ```
 
-### Beta
+#### Beta
 
 The parameter `beta` is a scalar introduced to modify the contribution of rotation stiffness.
 
@@ -196,7 +203,7 @@ The parameter `beta` is a scalar introduced to modify the contribution of rotati
       "beta"  : 1.0
 ```
 
-### Gamma
+#### Gamma
 
 The  coefficient `gamma` is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
 
@@ -204,7 +211,7 @@ The  coefficient `gamma` is used to  reduce the normal and shear stiffness in te
       "gamma" : 1.0
 ```
 
-### Tensile strength
+#### Tensile strength
 
 The tensile strength is the maximum stress that the lattice element can withstand while being stretched or pulled before breaking.
 
@@ -212,7 +219,7 @@ The tensile strength is the maximum stress that the lattice element can withstan
       "tensile_strength" : 2000
 ```
 
-### Cohesion
+#### Cohesion
 
 Is the material cohesion that is used in the conventional Mohr-Columnb failure citeria.
 
@@ -220,7 +227,7 @@ Is the material cohesion that is used in the conventional Mohr-Columnb failure c
       "cohesion" : 2000
 ```
 
-### Friction angle
+#### Friction angle
 
 Is the friction angle of the material that is used in the conventional Mohr-Columnb failure citeria.
 
@@ -228,7 +235,7 @@ Is the friction angle of the material that is used in the conventional Mohr-Colu
       "friction_angle" : 0.0
 ```
 
-### Emicro
+#### Emicro
 
 The `Emicro` is the Micropolar elasticity module of the lattice element.
 
@@ -236,9 +243,9 @@ The `Emicro` is the Micropolar elasticity module of the lattice element.
       "Emicro" : 2.0E+7
 ```
 
-### Distribution
+#### Distribution
 
-LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min\_threshold` is the minimum allowable probability value.
+LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min_threshold` is the minimum allowable probability value.
 
 ```json
       "distribution" : {
@@ -249,7 +256,7 @@ LEM code includes the option to choose from three probability distribution funct
       }
 ```
 
-## Reconnection
+### Reconnection
 
 The re-connection is an argument in the `mesh` element, `status: yes` adds an increase in stiffness from `0` stiffness, when  an element gets reconnected.
 
@@ -260,7 +267,7 @@ The re-connection is an argument in the `mesh` element, `status: yes` adds an in
     }
 ```
 
-## Boundary conditions
+### Boundary conditions
 
 Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for `restrain` boundary or `pressure` to apply initial load.
 
@@ -268,12 +275,12 @@ Boundary conditions are used to prescribe values of basic solution variables: di
     "boundary_conditions" : [
       {
         "type" : "restrain",
-    "node_set" : "-z",
+        "node_set" : "-z",
         "restrain" : [false, false, true, false, false, false]
       },
       {
         "type" : "pressure",
-    "node_set" : "+z",
+        "node_set" : "+z",
         "pressure" : 1700,
         "dir" : 2,
         "face" : 5
@@ -285,7 +292,7 @@ Boundary conditions are used to prescribe values of basic solution variables: di
 
 Cartesian boundary node sets are automatically created based on the list of nodes. List of automatically created boundary node sets are: `-x`, `+x`, `-y`, `+y`, `-z` and `+z`.
 
-# Analysis
+## Analysis
 
 The analysis argument define what load type is applied as `displacement` or `pressure`, maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
 
@@ -309,4 +316,3 @@ The analysis argument define what load type is applied as `displacement` or `pre
 # Sample input files
 
 * [https://github.com/cb-geo/lem-benchmarks](https://github.com/cb-geo/lem-benchmarks)
-

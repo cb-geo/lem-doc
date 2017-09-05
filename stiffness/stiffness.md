@@ -1,4 +1,7 @@
-# Stiffness
+# Current stiffness model
+![Stiffness reduction](stiffness-reduction.png)
+
+# Stiffness (proposed)
 ![Stiffness](stiffness.png)
 
 ## Tensile failure

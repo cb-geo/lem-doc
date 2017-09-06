@@ -1,6 +1,8 @@
 # Current stiffness model
 ![Stiffness reduction](stiffness-reduction.png)
 
+* If an element has been reconnected, it can't fail in tension, because of no tensile stiffness, and in shear it undergoes plastic deformation.
+
 # Stiffness (proposed)
 ![Stiffness](stiffness.png)
 

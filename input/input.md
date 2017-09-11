@@ -91,8 +91,8 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
       "strain_node_set" : ["+z", "-z"],
       "max_steps" : 5,
       "nreassemble_stiffness": 1,
-      "max_threshold_lattices" : 20,
-      "max_breakable_lattices" : 20
+      "max_threshold_elements" : 20,
+      "max_breakable_elements" : 20
     }
   },
   "solver" : {
@@ -142,7 +142,7 @@ The nodes is an argument in the `mesh` element,  which contains the directory of
 
 #### Elements \[optional\]
 
-The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with the nodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the lattice elements.
+The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with the nodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the elements.
 
 ```json
       "elements": "input/elements.txt"
@@ -181,7 +181,7 @@ The element is an argument in the `mesh` element, which defines the material pro
 
 #### Type
 
-The type is an argument in the `mesh` element, which defines the lattice element type \(Beam or Spring\).
+The type is an argument in the `mesh` element, which defines the element type \(Beam or Spring\).
 
 ```json
       "type" : "Beam"
@@ -213,7 +213,7 @@ The  coefficient `gamma` is used to  reduce the normal and shear stiffness in te
 
 #### Tensile strength
 
-The tensile strength is the maximum stress that the lattice element can withstand while being stretched or pulled before breaking.
+The tensile strength is the maximum stress that the element can withstand while being stretched or pulled before breaking.
 
 ```json
       "tensile_strength" : 2000
@@ -237,7 +237,7 @@ Is the friction angle of the material that is used in the conventional Mohr-Colu
 
 #### Emicro
 
-The `Emicro` is the Micropolar elasticity module of the lattice element.
+The `Emicro` is the Micropolar elasticity module of the element.
 
 ```json
       "Emicro" : 2.0E+7
@@ -294,7 +294,7 @@ Cartesian boundary node sets are automatically created based on the list of node
 
 ## Analysis
 
-The analysis argument define what load type is applied as `displacement` or `pressure`, maximum number of steps, maximum number of breakable lattices by step and others options specified by the user.
+The analysis argument define what load type is applied as `displacement` or `pressure`, maximum number of steps, maximum number of breakable elements by step and others options specified by the user.
 
 ```json
   "analysis" : {
@@ -307,8 +307,8 @@ The analysis argument define what load type is applied as `displacement` or `pre
       "strain_node_set" : ["+z", "-z"],
       "max_steps" : 5,
       "nreassemble_stiffness": 1,
-      "max_threshold_lattices" : 20,
-      "max_breakable_lattices" : 20
+      "max_threshold_elements" : 20,
+      "max_breakable_elements" : 20
     }
   }
 ```

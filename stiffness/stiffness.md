@@ -1,3 +1,6 @@
+# Failure model
+![Beam failure model](beam-failure-workflow.png)
+
 # Current stiffness model
 ![Stiffness reduction](stiffness-reduction.png)
 

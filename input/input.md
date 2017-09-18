@@ -174,7 +174,7 @@ The parameter `beta` is a scalar introduced to modify the contribution of rotati
 
 ## Gamma
 
-The  coefficient `gamma` is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
+The  coefficient `gamma` is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
 
 ```json
       "gamma" : 1.0,
@@ -190,7 +190,7 @@ The tensile strength is the maximum stress that the lattice element can withstan
 
 ## Cohesion
 
-Is the material cohesion that is used in the conventional Mohr-Columnb failure citeria.
+Is the material cohesion that is used in the conventional Mohr-Coulomb failure criteria.
 
 ```json
       "cohesion" : 2000,
@@ -198,7 +198,7 @@ Is the material cohesion that is used in the conventional Mohr-Columnb failure c
 
 ## Friction angle
 
-Is the friction angle of the material that is used in the conventional Mohr-Columnb failure citeria.
+Is the friction angle of the material that is used in the conventional Mohr-Coulomb failure criteria.
 
 ```json
       "friction_angle" : 0.0,
@@ -281,7 +281,25 @@ The analysis argument define what load type is applied as `displacement` or `pre
     }
   },
 ```
+## Solver
+The solver argument define the Maximum number of iterations `max_iterations` and the error tolerance `tolerance`
 
+```json
+"solver" : {
+  "max_iterations" : 10000,
+  "tolerance" : 2.5E-03
+},
+```
+## Post processing
+ The Post processing argument define and control what information is placed in the output database by modifying output Step `output_steps`; writing element information enable `write_lattices`; and defining the result path `results_path` where exports forces, displacements, broken elements as compressed binary VTP files, which can be visualised using ParaView or Visit.  
+
+```json
+ "post_processing" : {
+   "output_steps" : 100,
+   "write_lattices" : true,
+   "results_path" : "results/"
+ }
+ ```
 # Sample input files
 
 * [https://github.com/cb-geo/lem-benchmarks](https://github.com/cb-geo/lem-benchmarks)

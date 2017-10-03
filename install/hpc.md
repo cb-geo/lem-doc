@@ -31,26 +31,28 @@ module add lem/wilkes
 1. Load the required modules:
 
 ```bash
-module use /scratch/cb-geo/modulefiles
+module load cmake/3.4.3
 module load gcc/5.3.0
+module use /scratch/cb-geo/modulefiles
 module add intel/mkl/11.3.3.210
 module add cuda/8.0
-module add vtk/wilkes
+module add vtk/7.1.1
 module add eigen
 module add voro++
 ```
+2. Clone the LEM repository `git clone git@github.com:cb-geo/lem.git lem`
 
-2. Configure `CMake` and create a make file
+3. Configure `CMake` and create a make file
 
 ```bash
 mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
 
-3. Run `make clean && make -jN` (where N is the number of cores)
+4. Run `make clean && make -jN` (where N is the number of cores)
 
-3. Run lem `./lem -d /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d ../benchmarks/fracture_200/ -s CG_MKL`. See [LEM solvers](../solvers/solvers.md) for more details.
+5. Run lem `./lem -d 3 -f /path/to/inputfile/ -s solver_type`, for e.g., `./lem -d 3 -f ../benchmarks/fracture_200/ -s CG_MKL`. See [LEM solvers](../solvers/solvers.md) for more details.
 
-4. Run lemtest `ctest -VV -S` or `./lemtest` to run test cases.
+6. Run lemtest `ctest -VV -S` or `./lemtest` to run test cases.
 
 ## Job submission
 ### Darwin (CPU) cluster

@@ -56,4 +56,4 @@ mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
 
 ## Job submission
 ### Darwin (CPU) cluster
-On Darwin HPCS, use the [CPU Darwin SLURM submission file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem.txt) or [GPU Wilkes SLURM submission file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem_gpu.txt)
+On Darwin HPCS, use the [CPU Darwin SLURM submission file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem.cpu) or [GPU Wilkes SLURM submission file](https://raw.githubusercontent.com/cb-geo/hpc-scripts/master/lem.gpu)

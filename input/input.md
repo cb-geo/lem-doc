@@ -56,6 +56,7 @@ The LEM configuration defines id, input files, bounding box, element, node sets 
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
+	"file" : "input/elements_scaling.txt",
         "type" : "uniform",
         "sigma" : 0.05,
         "mu" : 1.0,
@@ -171,6 +172,7 @@ The element is an argument in the `mesh` element, which defines the material pro
       "friction_angle" : 0.0,
       "Emicro" : 2.0E+7,
       "distribution" : {
+	"file" : "input/elements_scaling.txt",
         "type" : "uniform",
         "sigma" : 0.05,
         "mu" : 1.0,
@@ -245,10 +247,11 @@ The `Emicro` is the Micropolar elasticity module of the element.
 
 #### Distribution
 
-LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min_threshold` is the minimum allowable probability value.
+LEM code includes the option to choose from three probability distribution functions \(normal, lognormal, and uniform\) to represent the heterogeneity in stiffness, strength, or both. The parameters used in the distribution function are `sigma`, `mu` and `min\_threshold`, where `sigma` is the standard deviation, `mu` is the mean or expectation of the distribution and `min_threshold` is the minimum allowable probability value. If a `file` location is specified, then the distribution assignment in the file will be used, the file has element id and the scaling factor for each element. When a file is not specified, a distribution as specified will be created.
 
 ```json
       "distribution" : {
+	"file" : "input/elements_scaling",
         "type" : "normal",
         "sigma" : 0.05,
         "mu" : 1.0,

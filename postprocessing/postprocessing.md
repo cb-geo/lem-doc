@@ -60,9 +60,9 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|3|1870.62270044566|9.31027055645156e-05|5|5
 b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6|0|1.56735984822119|0.00379986001471253
 ```
 
-## Element table
+## Elements data
 
-* To enable writing element information enable `elements` in `post_processing` section of the input JSON file:
+* To enable writing element information ensure `write_elements` is set to `true` in `post_processing` section of the input JSON file:
 
 ```json
   "post_processing" : {
@@ -70,22 +70,7 @@ b09b5957-4560-4c46-a3cc-c24f1552fefa|4|1883.13007276794|9.37289192437613e-05|6|6
   }
 ```
 
-* Stiffness and status of elements are written to a table called `Elements`:
-
-```
-analysis|timestep|eid|stiffness|status
-b09b5957-4560-4c46-a3cc-c24f1552fefa|0|0|16587793.8489298|1
-b09b5957-4560-4c46-a3cc-c24f1552fefa|0|1|8789304.42281428|1
-b09b5957-4560-4c46-a3cc-c24f1552fefa|0|2|1397908.18070347|1
-b09b5957-4560-4c46-a3cc-c24f1552fefa|0|3|11197073.256249|1
-
-```
-
-* To extract stiffness data of a particular time step `n`:
- 
-```
- select * from Elements where analysis='b09b5957-4560-4c46-a3cc-c24f1552fefa' and timestep=0;
-```
+* Stiffness, orientation, length, area, status, and microscopic properties of the elements are written to a HDF5 file called `Elements0000.h5` for each time step. Please refer to Jupyter notebooks to parse HDF5 data [https://nbviewer.jupyter.org/github/cb-geo/lem-analysis-codes/blob/master/read-hdf5/read-hdf5.ipynb](https://nbviewer.jupyter.org/github/cb-geo/lem-analysis-codes/blob/master/read-hdf5/read-hdf5.ipynb)
 
 > **Info** A status of 1 indicates active, and 0 otherwise.s
 

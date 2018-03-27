@@ -135,7 +135,7 @@ The input files is an argument in the `mesh` element,  which contains the direct
 
 #### Nodes
 
-The nodes is an argument in the `mesh` element,  which contains the directory of the input file  with the nodes coordinates.
+The nodes is an argument in the `mesh` element, which contains the directory of the input file with the nodes coordinates.
 
 ```json
       "nodes": "input/nodes.txt"
@@ -143,7 +143,7 @@ The nodes is an argument in the `mesh` element,  which contains the directory of
 
 #### Elements \[optional\]
 
-The elements is an optional argument in the `mesh` element,  which contains the directory of the input file  with the nodal incidence of the elements.This is an optional argument, if not specified, the LEM code will create  the input file  with tnodal incidence of the elements.
+The elements is an optional argument in the `mesh` element, which contains the directory of the input file with the nodal incidence of the lattice elements.This is an optional argument, if not specified, the LEM code will create the input file with tnodal incidence of the elements.
 
 ```json
       "elements": "input/elements.txt"
@@ -207,7 +207,7 @@ The parameter `beta` is a scalar introduced to modify the contribution of rotati
 
 #### Gamma
 
-The  coefficient `gamma` is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information is can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
+The  coefficient `gamma` is used to  reduce the normal and shear stiffness in tensile failure and shear failure. More information can be found in [https://lem-doc.cb-geo.com/stiffness/stiffness.html](https://lem-doc.cb-geo.com/stiffness/stiffness.html)
 
 ```json
       "gamma" : 1.0
@@ -223,7 +223,7 @@ The tensile strength is the maximum stress that the element can withstand while 
 
 #### Cohesion
 
-Is the material cohesion that is used in the conventional Mohr-Columnb failure citeria.
+Is the material cohesion that is used on the conventional Mohr-Columnb failure citeria.
 
 ```json
       "cohesion" : 2000
@@ -231,7 +231,7 @@ Is the material cohesion that is used in the conventional Mohr-Columnb failure c
 
 #### Friction angle
 
-Is the friction angle of the material that is used in the conventional Mohr-Columnb failure citeria.
+Is the friction angle of the material that is used on the conventional Mohr-Columnb failure citeria.
 
 ```json
       "friction_angle" : 0.0
@@ -272,7 +272,7 @@ The re-connection is an argument in the `mesh` element, `status: yes` adds an in
 
 ### Boundary conditions
 
-Boundary conditions are used to prescribe values of basic solution variables: displacements and rotations for `restrain` boundary or `pressure` to apply initial load.
+Boundary conditions are used to restrain or prescribe values of basic solution variables: displacements and rotations for `restrain` boundary or `pressure` to apply initial load.
 
 ```json
     "boundary_conditions" : [
@@ -290,6 +290,25 @@ Boundary conditions are used to prescribe values of basic solution variables: di
       }
     ]
 ```
+## Boundary type
+
+The type is an argument in the `boundary_conditions`, which defines the boundary type \(restrain or pressure\).
+
+## Boundary restrain
+
+The `restrain` vector contains displacemente (x,y,z) and rotation (x,y,z) degrees of freedom to be constrained directly with the option `true`.  
+
+## Boundary pressure
+
+The `pressure` is an argument in the `boundary_conditions`, which defines pressure load value to be applied on the cell faces that contain the `node_set`.
+
+## Boundary pressure dir
+
+The `dir` is an argument in the `boundary_conditions`, which defines the principal direction 0, 1 or 2 of the `pressure`.
+
+## Boundary pressure faces
+
+The `face`is an argument in the `boundary_conditions`,  wich refers to `(1 = +x)` ,` (2 = -x)` , `(3 = + y)`  , `(4 = - y)` , `(5 = + z)` , `(6 = -z)`  faces of a cube where the `pressure` is applied.
 
 ## Boundary node sets
 
